@@ -63,6 +63,10 @@ button:active{
     transform: scale(0.95);
 }
 
+.button-active{
+    background-color: #4c6a79;
+}
+
 /*appearance используется для сброса внешнего вида элементов. чтобы унифицировать внешний вид элементов во всех браузерах и всех ОС*/
 input[type="color"]{
     -webkit-appearance: none;

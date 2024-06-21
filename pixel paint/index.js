@@ -107,10 +107,14 @@ clearGridButton.addEventListener("click", ()=>{
 });
 
 eraseBtn.addEventListener("click", ()=>{
+    eraseBtn.classList.add("button-active");
+    paintBtn.classList.remove("button-active");
     erase = true;
 });
 
 paintBtn.addEventListener("click", ()=>{
+    eraseBtn.classList.remove("button-active");
+    paintBtn.classList.add("button-active");
     erase = false;
 });
 
@@ -133,6 +137,7 @@ saveBtn.addEventListener("click", ()=> { //сохранение картинки
 });
 
 window.onload = () =>{
+    paintBtn.classList.add("button-active");
     gridHeight.value = 0;
     gridWidth.value = 0;
 };
