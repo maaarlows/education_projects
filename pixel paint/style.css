@@ -45,6 +45,7 @@ input{
 
 /*кнопки создания, удаления*/
 button{
+    min-width: 100px;
     background-color: #7d8b8f;
     border: none;
     border-radius: 5px;
