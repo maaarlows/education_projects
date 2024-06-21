@@ -50,6 +50,16 @@ button{
     border-radius: 5px;
     padding: 5px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #5b737a;
+}
+
+button:active{
+    background-color: #4c6a79;
+    transform: scale(0.95);
 }
 
 /*appearance используется для сброса внешнего вида элементов. чтобы унифицировать внешний вид элементов во всех браузерах и всех ОС*/
@@ -63,7 +73,6 @@ input[type="color"]{
     border: none;
     cursor: pointer; /*не курсор, а рука на выборе цвета*/
 }
-
 
 /*рамка у выбора цвета*/
 input[type="color"]::-webkit-color-swatch{
