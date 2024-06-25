@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #212121
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: background-color 0.3s ease-in;
+}
+
+#mode-toggle{
+    position: absolute;
+    left: -9999px;
+}
+
+.container {
+    width: 369px;
+    height: 145px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 0.5s ease-in;
+}
+
+.light {
+    background-image: url("Assets/day.png");
+    opacity: 1;
+}
+
+.dark {
+    background-image: url("Assets/night.png");
+    opacity: 0;
+}
+
+.ball {
+    position: relative;
+    z-index: 10;
+    border-radius: 50%;
+    margin-left: 14px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in;
+    overflow: hidden;
+}
+
+.ball::before, .ball::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s ease-in;
+}
+
+.ball::before {
+    background-image: url("Assets/sun.png");
+    opacity: 1;
+}
+
+.ball::after {
+    background-image: url("Assets/moon.png");
+    opacity: 0;
+}
+
+#mode-toggle:checked ~ .container .light {
+    opacity: 0;
+}
+
+#mode-toggle:checked ~ .container .dark {
+    opacity: 1;
+}
+
+#mode-toggle:checked ~ .container .ball {
+    transform: translateX(220px);
+}
+
+#mode-toggle:checked ~ .container .ball::before {
+    opacity: 0;
+}
+
+#mode-toggle:checked ~ .container .ball::after {
+    opacity: 1;
+}
