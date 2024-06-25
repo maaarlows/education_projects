@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #212121
 }
 
 body {
@@ -52,6 +53,7 @@ body {
     margin-left: 14px;
     cursor: pointer;
     transition: transform 0.5s ease-in;
+    overflow: hidden;
 }
 
 .ball::before, .ball::after {
