@@ -128,11 +128,20 @@ gridHeight.addEventListener("input", ()=>{
     //то перед числом будет 0.  Для верного отображения на фронте
 });
 
-saveBtn.addEventListener("click", ()=> { //сохранение картинки
-    html2canvas(container).then(canvas =>{
-        canvas.toBlob((blob) =>{
+saveBtn.addEventListener("click", () => { // сохранение картинки
+    let tempContainer = document.createElement("div");
+    tempContainer.style.position = "absolute";
+    tempContainer.style.left = "-9999px"; //уводим временный контейнер за пределы видимости. кажется, что херовое решение, но это работает..
+    document.body.appendChild(tempContainer); //добавление временного контейнера в тело документа
+
+    let clone = container.cloneNode(true); //клонируем контейнер 
+    tempContainer.appendChild(clone); //во временный контейнер
+
+    html2canvas(clone).then(canvas => {
+        canvas.toBlob((blob) => {
             saveAs(blob, "grid-image.png");
-        });
+            document.body.removeChild(tempContainer);
+        }, 'image/png'); // Указываем тип изображения
     });
 });
 
