@@ -10,7 +10,11 @@
 </head>
 <body>
     <div class="container">
+<<<<<<< Updated upstream
         <div class="options">
+=======
+        <div class="options">  <!-- здесь создание кнопок и импорт иконок с font-awesome -->
+>>>>>>> Stashed changes
             <button id="bold" class="option-button format">
                 <i class="fa-solid fa-bold"></i>
             </button>
@@ -60,7 +64,37 @@
             <button id="outdent" class="option-button spacing">
                 <i class="fa-solid fa-outdent"></i>
             </button>
+<<<<<<< Updated upstream
         </div>
     </div>
+=======
+
+            <select id="formatBlock" class="adv-options-button"> <!-- кнопка выбора шрифта -->
+                <option value="H1">H1</option>
+                <option value="H2">H2</option>
+                <option value="H3">H3</option>
+                <option value="H4">H4</option>
+                <option value="H5">H5</option>
+                <option value="H6">H6</option>
+            </select>
+            <select id="fontName" class="adv-option-button"></select>
+            <select id="fontSize" class="adv-option-button"></select>
+
+            <div class="input-wrapper">
+                <input type="color" id="foreColor" class="adv-option-button">
+                <label for="foreColor">Font Color</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="color" id="highlightColor" class="adv-option-button">
+                <label for="highlightColor">Highlight Color</label>
+            </div>
+
+        </div>
+        <div id="text-input" contenteditable="true"></div>
+    </div>
+
+    <script src="script.js"></script>
+    
+>>>>>>> Stashed changes
 </body>
 </html>
